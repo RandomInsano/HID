@@ -39,66 +39,69 @@ void GamepadAPI::end(void){
 	SendReport(&_report, sizeof(_report));
 }
 
-void GamepadAPI::write(void){ 
-	SendReport(&_report, sizeof(_report)); 
+void GamepadAPI::write(void){
+	SendReport(&_report, sizeof(_report));
 }
 
 
-void GamepadAPI::press(uint8_t b){ 
-	_report.buttons |= (uint32_t)1 << (b - 1); 
+void GamepadAPI::press(uint8_t b){
+	_report.buttons |= (uint32_t)1 << (b - 1);
 }
 
 
-void GamepadAPI::release(uint8_t b){ 
-	_report.buttons &= ~((uint32_t)1 << (b - 1)); 
+void GamepadAPI::release(uint8_t b){
+	_report.buttons &= ~((uint32_t)1 << (b - 1));
 }
 
 
-void GamepadAPI::releaseAll(void){ 
-	memset(&_report, 0x00, sizeof(_report)); 
+void GamepadAPI::releaseAll(void){
+	memset(&_report, 0x00, sizeof(_report));
 }
 
-void GamepadAPI::buttons(uint32_t b){ 
-	_report.buttons = b; 
-}
-
-
-void GamepadAPI::xAxis(int16_t a){ 
-	_report.xAxis = a; 
+void GamepadAPI::buttons(uint32_t b){
+	_report.buttons = b;
 }
 
 
-void GamepadAPI::yAxis(int16_t a){ 
-	_report.yAxis = a; 
+void GamepadAPI::xAxis(int16_t a){
+	_report.xAxis = a;
 }
 
 
-void GamepadAPI::zAxis(int8_t a){ 
-	_report.zAxis = a; 
+void GamepadAPI::yAxis(int16_t a){
+	_report.yAxis = a;
 }
 
 
-void GamepadAPI::rxAxis(int16_t a){ 
-	_report.rxAxis = a; 
+void GamepadAPI::zAxis(int8_t a){
+	_report.zAxis = a;
 }
 
 
-void GamepadAPI::ryAxis(int16_t a){ 
-	_report.ryAxis = a; 
+void GamepadAPI::rxAxis(int16_t a){
+	_report.rxAxis = a;
 }
 
 
-void GamepadAPI::rzAxis(int8_t a){ 
-	_report.rzAxis = a; 
+void GamepadAPI::ryAxis(int16_t a){
+	_report.ryAxis = a;
 }
 
 
-void GamepadAPI::dPad1(int8_t d){ 
-	_report.dPad1 = d; 
+void GamepadAPI::rzAxis(int8_t a){
+	_report.rzAxis = a;
 }
 
 
-void GamepadAPI::dPad2(int8_t d){ 
-	_report.dPad2 = d; 
+void GamepadAPI::dPad1(int8_t d){
+	_report.dPad1 = d;
 }
 
+
+void GamepadAPI::dPad2(int8_t d){
+	_report.dPad2 = d;
+}
+
+void GamepadAPI::dPad3(int8_t d){
+	_report.dPad3 = d;
+}
